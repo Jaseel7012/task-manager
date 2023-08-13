@@ -1,0 +1,82 @@
+.headertable {
+    color: aqua;
+}
+
+#check {
+    display: block;
+}
+
+.vl {
+    border-left: 6px solid green;
+    height: 44px;
+}
+.low {
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+   
+}
+.medium {
+    height: 3rem;
+    width: 0.3rem;
+    background-color: orange;
+}
+.high {
+    height: 3rem;
+    width: 0.3rem;
+    background-color: green;
+}
+.none {
+    height: 3rem;
+    width: 0.3rem;
+    background-color: gray;
+}
+#tableview {
+    padding-left: 160px;
+}
+#priorityblock{
+    display: none;
+}
+#update {
+    padding-left: 110px;
+}
+#task{
+    display:inline;
+}
+#updatedetail{
+    display:inline; padding: 19px;
+}
+#searchBox{
+    background-color:black ;
+    width: 250px;
+    border-radius: 9px;
+}
+::placeholder{
+    color: white;
+}
+input{
+    color: white;
+}
+#searchbutton{
+     background: transparent;
+    border: none;
+    outline: none; 
+    margin-left: -40px;
+    color: white;
+}
+#searchdiv{
+    margin-left: 90px;
+}
+#message{
+    color: white;
+    font-style: italic;
+}
+.headertext{
+    color: aqua;
+}
+.tablebody{
+    color: white;
+}
+#tableview{
+    padding-left: 100px;
+}

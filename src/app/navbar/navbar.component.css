@@ -1,0 +1,48 @@
+#priority {
+    background-color: gray;
+    width: 130px;
+}
+
+#progress {
+    background-color: gray;
+}
+
+#owner {
+    background-color: gray
+}
+
+#side {
+    min-height: auto;
+    overflow: hidden;
+    
+
+}
+
+#update {
+    padding-left: 110px;
+}
+#main{
+    background-color: #151414;
+    min-height: 650px;
+    
+}
+#task{
+    display:inline;
+}
+#updatedetail{
+    display:inline; padding: 19px;
+}
+#myTask{
+    color: white;
+}
+#bar{
+    color: black;
+    padding-left: 10px;
+}
+#fix{
+    position: fixed
+}
+#circlequestion{
+    font-size: 18px;
+    padding-right: 10px;
+}

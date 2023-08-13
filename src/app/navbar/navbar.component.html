@@ -1,0 +1,29 @@
+<div class="row " id="navbar">
+    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg-dark text-light p-3 ">
+        <h4 class="bg-dark text-light p-2 "><i class="fa-solid fa-heart-pulse"></i><strong>Task Manager <i
+                    class="fa-regular fa-circle-question float-end  mt-2" id="circlequestion"></i></strong></h4>
+    </div>
+</div>
+<div>
+    <div class="row flex-nowrap ">
+        <div class="col-auto px-0 bg-dark" id="fix">
+            <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse"
+                class="border rounded-3 p-1 text-decoration-none "><i class="bi bi-list bi-lg  fa fa-bars" id="bar"></i>
+            </a>
+            <hr>
+            <div id="sidebar" class="collapse collapse-horizontal show border-end ">
+
+                <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                    <a routerLink="/list" class="list-group-item border-end-0 d-inline-block text-truncate "
+                        class="button btn btn-dark" data-bs-parent="#sidebar" (click)="myTask()"><i
+                            class="bi bi-bootstrap "></i><i class='fa fa-tasks' id="myTask"></i> <span>
+                            My Tasks</span> </a>
+                </div>
+            </div>
+        </div>
+        <main class="col ps-md-2 pt-2" id="main">
+            <hr>
+            <app-list-view [taskviewFlagChild]="taskviewflagparent"></app-list-view>
+        </main>
+    </div>
+</div>

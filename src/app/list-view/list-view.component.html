@@ -1,0 +1,115 @@
+<div *ngIf="taskviewFlagChild">
+  <div class="row" id="update">
+    <div class="col col-12 col-sm-12 col-md-4 col-lg-6 col-xl-6 col-xxl-6">
+      <h5 class="text-light" id="task">My Tasks </h5>
+    </div>
+    <div class="col col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 col-xxl-6">
+      <input type="text" name="name" [(ngModel)]="name" id="searchBox" placeholder="Search">
+      <button id="searchbutton" (click)="searchclick()">
+        <i class="fas fa-search"></i>
+      </button>
+
+    </div>
+  </div>
+  <hr>
+  <div class="row" id="searchdiv">
+    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+      <div *ngIf="searchData.length!=0; else hideblock" id="tableview" class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr class="headertext">
+              <th>Name</th>
+              <th>Age</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let element of searchData" class="tablebody">
+              <td>{{element.patientName}}</td>
+              <td>{{element.age}}</td>
+              <td>{{element.description}}</td>
+              <td>{{element.location}}</td>
+              <td>{{element.status}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #hideblock>
+        <div id="message" class="d-flex justify-content-center">
+          <div class="p-2" id="message">No data</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="table-responsive " id="tableview" *ngIf="taskviewFlagChild">
+    <table class="table ">
+      <thead>
+        <tr class="headertable">
+          <th scope="col"></th>
+          <th scope="col"><input type="checkbox" name="" id=""></th>
+          <th scope="col">
+            <h6>Patient details</h6>
+          </th>
+          <th scope="col">
+            <h6 class="headertable">Location:facility-unit-room-bed</h6>
+          </th>
+          <th scope="col">
+            <h6>Test description</h6>
+          </th>
+          <th scope="col">
+            <h6>Due today <i class="fa-solid fa-arrow-down" style="color: white;"></i></h6>
+          </th>
+          <th scope="col">
+            <h6>Status</h6>
+          </th>
+          <th scope="col">
+            <h6>Comment</h6>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bordered">
+        <tr *ngFor="let element of fetchedData | paginate:{ itemsPerPage:4,currentPage:current,totalItems:total }"
+          class="text-light">
+          <td scope="col">
+            <div
+              [ngClass]="{low:element.priority=='low',high:element.priority=='high',medium:element.priority=='medium',none:element.priority=='None'}">
+            </div>
+          </td>
+          <td scope="col"><input type="checkbox"></td>
+          <td>
+            <h6>{{element.patientName }}|{{element.age}}</h6>
+          </td>
+          <td>
+            <h6>{{element.facility }}- {{element.unitName}}</h6>
+          </td>
+          <td>
+            <h6>{{element.description}}</h6>
+          </td>
+          <td>
+            <h6> {{element.dueDate | date : 'd MMM y hh:mm'}}</h6>
+          </td>
+          <td>
+            <h6>{{element.status}}</h6>
+          </td>
+          <td>
+            <h6>{{element.comment}}</h6>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="float-end text-primary ">
+      <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+    </div>
+    <label for="" class="from-label"></label>
+   
+    
+    
+  </div>
+
+  
+  
+ 
+</div>
